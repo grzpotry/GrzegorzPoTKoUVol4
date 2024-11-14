@@ -11,6 +11,7 @@ namespace EEnvTestAttribute
 {
 
 	// Code review: [Rename to AttributeType]
+	// Code review: [assign values explicitly]
 	enum AttributeEnum
 	{
 		Health,
