@@ -39,9 +39,12 @@ void UEnvQueryTest_Attributes::RunTest(FEnvQueryInstance& QueryInstance) const
 		if (const IAbilitySystemInterface* GameplayTagAssetInterface = Cast<const IAbilitySystemInterface>(ItemActor))
 		{
 			//const UGASAttributeSet* set =  Cast<const UGASAttributeSet>(GameplayTagAssetInterface->GetAbilitySystemComponent()->GetAttributeSet(UGASAttributeSet::StaticClass()));
+
+			// Code review: can be casted outside loop
 			auto cmp =   Cast<const UGASAbilitySystemComponent>(GameplayTagAssetInterface->GetAbilitySystemComponent());
 			auto set = Cast<const UGASAttributeSet>(cmp->MyGetAttributeSet(UGASAttributeSet::StaticClass()));
-			
+
+			// Code review: extract score calculation to helper function
 			switch (AttributeEnumValue)
 			{
 			case EEnvTestAttribute::Health:

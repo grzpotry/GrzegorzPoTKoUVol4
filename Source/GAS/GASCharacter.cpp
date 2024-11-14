@@ -55,7 +55,8 @@ AGASCharacter::AGASCharacter()
 
 	Attributes = CreateDefaultSubobject<UGASAttributeSet>("Attributes");
 
-	
+
+	// Code review: [remove unnecessary local variables]
 	auto x = 2;
 
 	AttributesBackup = Attributes;
