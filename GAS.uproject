@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.2",
+	"EngineAssociation": "5.4",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -15,7 +15,12 @@
 			]
 		}
 	],
+	"CppStandard": "C++20",
 	"Plugins": [
+		{
+			"Name": "XRBase",
+			"Enabled": true
+		},
 		{
 			"Name": "MLAdapter",
 			"Enabled": true

@@ -8,7 +8,8 @@ public class GASEditorTarget : TargetRules
 	public GASEditorTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
-		DefaultBuildSettings = BuildSettingsVersion.V2;
+		DefaultBuildSettings = BuildSettingsVersion.V5;
+		CppStandard = CppStandardVersion.Cpp20;
 		ExtraModuleNames.Add("GAS");
 	}
 }
