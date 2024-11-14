@@ -9,7 +9,7 @@
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FReceivedDamageDelegate, UGASAbilitySystemComponent*, SourceASC, float, UnmitigatedDamage, float, MitigatedDamage);
 
 /**
- * 
+ * // Code review: [Move to Core folder (with .cpp file)]
  */
 UCLASS()
 class GAS_API UGASAbilitySystemComponent : public UAbilitySystemComponent

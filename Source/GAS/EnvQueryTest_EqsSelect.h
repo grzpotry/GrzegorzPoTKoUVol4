@@ -6,11 +6,15 @@
 #include "EnvironmentQuery/EnvQueryTest.h"
 #include "EnvQueryTest_EqsSelect.generated.h"
 
+
+// Code review: [fix formatting as mentioned in GAS.Build.cs].
+// Code review: [Move to EQS folder (with .cpp file)]
 UCLASS()
 class GAS_API UEnvQueryTest_EqsSelect : public UEnvQueryTest
 {
 	GENERATED_UCLASS_BODY()
 
+	// Code review: [can be private].
 	/** context */
 	UPROPERTY(EditDefaultsOnly, Category=TestAttributes)
 	FName Value;

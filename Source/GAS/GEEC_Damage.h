@@ -7,7 +7,7 @@
 #include "GEEC_Damage.generated.h"
 
 /**
- * 
+ *  // Code review: [Move to GameplayEffects folder (with .cpp file)]
  */
 UCLASS()
 class GAS_API UGEEC_Damage : public UGameplayEffectExecutionCalculation

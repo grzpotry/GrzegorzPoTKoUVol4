@@ -54,6 +54,7 @@ UEnvQueryTest_EqsSelect::UEnvQueryTest_EqsSelect(const FObjectInitializer& Objec
 
 void UEnvQueryTest_EqsSelect::RunTest(FEnvQueryInstance& QueryInstance) const
 {
+	// Code review: [can be const UObject* QueryOwner].
 	UObject* QueryOwner = QueryInstance.Owner.Get();
 	if (QueryOwner == nullptr)
 	{
@@ -79,10 +80,12 @@ void UEnvQueryTest_EqsSelect::RunTest(FEnvQueryInstance& QueryInstance) const
 		{
 			//cast to our target
 			const auto eqs_selectActor = Cast<const A_EQS_SELECT>(ItemActor);
+			
 			if(!IsValid(eqs_selectActor))
 				It.ForceItemState(EEnvItemStatus::Failed);
 			else
 			{
+				// Code review: [these values can be bound outside loop, they don't change in each iteration].
 				DefaultValue.BindData(QueryOwner, QueryInstance.QueryID);
 				ReferencePoint.BindData(QueryOwner, QueryInstance.QueryID);
 				FloatValueMin.BindData(QueryOwner, QueryInstance.QueryID);
@@ -92,7 +95,7 @@ void UEnvQueryTest_EqsSelect::RunTest(FEnvQueryInstance& QueryInstance) const
 				//UE SHOULD BY DEFAULT IMPLEMENT -=SAFE=- FIND(key, default) and NOT give nullptr OR lat least WARN about it and NOT in their source code but in function description.
 				//the way it is made now should be considered VIOLATION of good practices. 
 				const auto map = eqs_selectActor->FloatMap;
-		
+				
 				auto foundValue = map.Find(Value);
 				auto value = DefaultValue.GetValue();
 				if(foundValue!=nullptr)
@@ -100,6 +103,8 @@ void UEnvQueryTest_EqsSelect::RunTest(FEnvQueryInstance& QueryInstance) const
 
 				//substract ref value
 				value -= ReferencePoint.GetValue();
+
+				// Code review: [just use FMath::Abs; value = FMath::Abs(value - ReferencePoint.GetValue());].
 				if(value<0)
 					value*=-1;
 		
@@ -121,10 +126,12 @@ FText UEnvQueryTest_EqsSelect::GetDescriptionTitle() const
 	auto Fstring2 = DefaultValue.ToString();
 	auto Fstring3 = ReferencePoint.ToString();
 
+	// Code review: [unnecessary local variables, dereferencing FstringX can be used directly below].
 	auto Tchar1 = *Fstring1;
 	auto Tchar2 = *Fstring2;
 	auto Tchar3 = *Fstring3;
-	
+
+	// Code review: [typo defualt].
 	return FText::FromString(FString::Printf(TEXT("Compare key: %s with defualt value of %s : to %s"), 
 		Tchar1,
 		Tchar2,

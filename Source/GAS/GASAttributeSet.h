@@ -14,7 +14,8 @@
 	GAMEPLAYATTRIBUTE_VALUE_INITTER(PropertyName)
 
 /**
- * 
+ * // Code review: [fix formatting as mentioned in GAS.Build.cs].
+ * // Code review: [Move to Attributes folder (with .cpp file)]
  */
 UCLASS()
 class GAS_API UGASAttributeSet : public UAttributeSet

@@ -9,6 +9,8 @@
 UENUM()
 namespace EEnvTestAttribute
 {
+
+	// Code review: [Rename to AttributeType]
 	enum AttributeEnum
 	{
 		Health,
@@ -29,15 +31,18 @@ namespace EEnvTestAttribute
 	};
 }
 
+// Code review: [Move to EQS folder (with .cpp file)]
 UCLASS()
 class GAS_API UEnvQueryTest_Attributes : public UEnvQueryTest
 {
 	GENERATED_UCLASS_BODY()
-	
+
+	// Code review: [can be private]
 	/** testing mode */
 	UPROPERTY(EditDefaultsOnly, Category=Attribute)
 	TEnumAsByte<EEnvTestAttribute::AttributeEnum> AttributeEnumValue;
-	
+
+	// Code review: [can be private]
 	UPROPERTY(EditDefaultsOnly, Category=Attribute)
 	float ReferencePoint;
 	

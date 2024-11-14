@@ -10,7 +10,9 @@ UCLASS()
 class GAS_API A_EQS_SELECT : public AActor
 {
 	GENERATED_BODY()
-	
+
+	// Code review: [Move to EQS folder (with .cpp file)]
+	// Code review: [Formatting issue - add new line between each declared property and constructor according to ue formatting guidelines (in all files)].
 public:	
 	// Sets default values for this actor's properties
 	A_EQS_SELECT();

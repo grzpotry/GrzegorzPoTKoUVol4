@@ -19,6 +19,7 @@ void A_EQS_SELECT::BeginPlay()
 	SetLifeSpan(10);
 }
 
+// Code review: [No implementation - Can be skipped].
 // Called every frame
 void A_EQS_SELECT::Tick(float DeltaTime)
 {

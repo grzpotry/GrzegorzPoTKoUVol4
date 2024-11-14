@@ -10,6 +10,7 @@
 #include "Perception/AIPerceptionComponent.h"
 #include "GASCharacter.generated.h"
 
+// Code review: [Move to Core folder (with .cpp file)]
 UCLASS(config=Game)
 class AGASCharacter : public ACharacter, public IAbilitySystemInterface
 {

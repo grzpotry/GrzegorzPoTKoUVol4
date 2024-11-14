@@ -8,7 +8,7 @@
 #include "GASGameplayAbility.generated.h"
 
 /**
- * 
+ *  // Code review: [Move to GameplayAbilities folder (with .cpp file)]
  */
 UCLASS()
 class GAS_API UGASGameplayAbility : public UGameplayAbility
